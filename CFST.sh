@@ -15,6 +15,9 @@ curl -s https://www.cloudflare.com/ips-v4 -o ipv4.txt
 echo "正在启动v2raya容器..."
 docker start v2raya
 
+# 4.暂停1分钟
+sleep 1m
+
 # 4. 上传到GitHub
 echo "正在提交更新到GitHub..."
 git add .  # 添加所有修改
