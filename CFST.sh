@@ -9,7 +9,7 @@ docker stop v2raya
 echo "正在执行Cloudflare测速..."
 cd /mnt/yw-tmp/cfst-ubuntu9  # 进入测速目录
 curl -s https://www.cloudflare.com/ips-v4 -o ipv4.txt
-./CloudflareST -tp 443 -f ipv4.txt -n 200 -dn 10 -sl 4 -url https://st.bzg.cc.cd/50m  # 执行测速程序（请确保文件有执行权限）
+./CloudflareST -tp 443 -f ipv4.txt -n 200 -dn 20 -sl 4 -url https://st.bzg.cc.cd/50m  # 执行测速程序（请确保文件有执行权限）
 
 tail -n +2 result.csv | head -n 20 | while IFS=, read -r ip port ping loss speed; do
     # 请求 trace 接口获取 colo 节点代码 (设置 2 秒超时防止卡死)
@@ -20,7 +20,7 @@ tail -n +2 result.csv | head -n 20 | while IFS=, read -r ip port ping loss speed
         HKG) loc="香港" ;;
         NRT|HND) loc="日本 东京" ;;
         KIX) loc="日本 大阪" ;;
-        SGP) loc="新加坡" ;;
+        SIN) loc="新加坡" ;;
         TPE) loc="台湾 台北" ;;
         ICN) loc="韩国 首尔" ;;
         SJC) loc="美国 圣何塞" ;;
