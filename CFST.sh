@@ -20,7 +20,7 @@ cd /mnt/yw-tmp/cfst-ubuntu9
 curl -s --connect-timeout 10 --retry 3 https://www.cloudflare.com/ips-v4 -o ipv4.txt
 
 # 清理旧的测速结果，防止本次没测出结果时读取到上一次的旧文件
-rm -f result.csv
+# rm -f result.csv
 
 # 【关键修复 2】
 # 1) 使用 timeout 600 限制整个测速最多运行 10 分钟（600秒），防止无合格 IP 时无限测下去
